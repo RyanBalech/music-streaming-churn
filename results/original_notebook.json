@@ -1,0 +1,48 @@
+{
+  "source": "Recorded outputs in the supplied original course notebook; not a new run",
+  "source_notebook_sha256": "fef0aaf44e218820803a1fee837b31698280a66b42c7a53cd2e89d9d33dccb4c",
+  "train_event_rows": 17499636,
+  "test_event_rows": 4393179,
+  "observation_cutoff": "2018-11-10 00:00:00",
+  "label_horizon_end": "2018-11-20 00:00:00",
+  "labeled_users": 18880,
+  "competition_test_users": 2904,
+  "columns_including_id": 59,
+  "predictors": 58,
+  "validation_fraction": 0.2,
+  "split_seed": 42,
+  "split_type": "stratified disjoint users at a single event cutoff",
+  "models": {
+    "gradient_boosting": {
+      "roc_auc": 0.7458675511177063,
+      "estimators": 600,
+      "learning_rate": 0.04,
+      "depth": 3
+    },
+    "random_forest": {
+      "roc_auc": 0.7620196524800886,
+      "estimators": 500,
+      "min_samples_split": 10,
+      "min_samples_leaf": 5
+    },
+    "ensemble": {
+      "roc_auc": 0.7636976052538704,
+      "gradient_boosting_weight": 0.7,
+      "random_forest_weight": 0.3
+    }
+  },
+  "training_churn_rate_rounded": 0.035117,
+  "competition_submission": {
+    "positive_fraction_setting": 0.424,
+    "observed_predicted_positive_fraction": 0.423898,
+    "threshold": 0.05013113883962474,
+    "leaderboard_accuracy": null
+  },
+  "competition_rank": {
+    "rank": 1,
+    "teams": 40,
+    "source": "Author-provided course result; ranking artifact not supplied"
+  },
+  "eligibility": "All users observed by cutoff, including users with earlier cancellation events",
+  "new_pipeline_status": "Software tested on synthetic events; full real-data rerun requires original Parquet inputs"
+}
